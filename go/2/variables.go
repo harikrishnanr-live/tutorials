@@ -13,6 +13,8 @@ var b int = 10
 var c, d int = 100, 200
 
 func main() {
+	fmt.Println("This is an example for variable")
+
 	e, f := 7, "World!"
 	fmt.Println(a + b)
 	fmt.Println(c + d)

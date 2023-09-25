@@ -5,6 +5,7 @@ import (
 )
 
 func main() {
+	fmt.Println("This is an example for arrays")
 	// 1
 	var arr1 [5]int
 	arr1 = [5]int{1, 2, 3, 4, 5}

@@ -7,6 +7,7 @@ import (
 
 func main() {
 
+	fmt.Println("This is an example for slices")
 	// 1
 	var arr1 []string
 	arr1 = []string{"train", "car"}
