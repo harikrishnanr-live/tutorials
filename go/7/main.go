@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"functions/subs"
+)
 
 func Sum(a, b int) int {
 	return a + b
@@ -18,11 +21,6 @@ func Calc(a, b int) (int, int, int, int) {
 	return add, sub, mul, div
 }
 
-func printName(names ...string) {
-	fmt.Println(names)
-	fmt.Println(names[1])
-}
-
 func main() {
 	fmt.Println("This is a demo of function")
 	fmt.Println(Sum(5, 10))
@@ -31,4 +29,5 @@ func main() {
 
 	//Variadic Parameters
 	printName("Sachin", "Kaif")
+	subs.ShowFootballer("Luna", "KP")
 }
