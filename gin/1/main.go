@@ -23,6 +23,10 @@ func main() {
 		})
 	})
 
+	r.GET("/post", controllers.GetPostIndex)
 	r.POST("/save-post", controllers.PostsCreate)
+	r.GET("/show-post/:id", controllers.ShowPost)
+	r.PATCH("/update-post/:id", controllers.UpdatePost)
+	r.DELETE("/delete/:id", controllers.DeletePost)
 	r.Run()
 }
