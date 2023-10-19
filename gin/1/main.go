@@ -7,7 +7,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 )
-
+// CompileDaemon -command="./main.go"
 func init() {
 	initializers.LoadEnv()
 	initializers.ConnectDB()

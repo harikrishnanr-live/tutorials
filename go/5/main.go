@@ -32,4 +32,9 @@ func main() {
 
 	// assigning new values
 	temp3["others"] = []string{"g"}
+
+	var temperature = make(map[string]int)
+	temperature["aranmula"] = 20
+	temperature["Kochi"] = 25
+	fmt.Println(temperature)
 }
