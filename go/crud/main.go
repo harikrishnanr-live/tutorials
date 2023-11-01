@@ -37,6 +37,7 @@ func createTable() {
 
 func main() {
 	fmt.Println("This is a demo for CRUD operations using mysql")
+	http.HandleFunc("/", crudHandler)
 	http.ListenAndServe(":8080", nil)
 	connectDB()
 }
