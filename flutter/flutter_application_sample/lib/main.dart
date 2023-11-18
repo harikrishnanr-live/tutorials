@@ -22,23 +22,24 @@ class Femmar extends StatelessWidget {
                     'https://dev.sixweek.femmar.com/static/media/week0.c80fb757ec46a80d97b7.jpg'),
                 Text("Login"),
                 TextField(
-  decoration: InputDecoration(
-    border: OutlineInputBorder(),
-    hintText: 'Enter a search term',
-  ),
-),TextField(
-  decoration: InputDecoration(
-    border: OutlineInputBorder(),
-    hintText: 'Enter a search term',
-  ),
-),TextButton(
-  style: TextButton.styleFrom(
-    primary: Colors.blue,
-  ),
-  onPressed: () { },
-  child: Text('TextButton'),
-)
-
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: 'Enter a search term',
+                  ),
+                ),
+                TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: 'Enter a search term',
+                  ),
+                ),
+                TextButton(
+                  style: TextButton.styleFrom(
+                    primary: Colors.blue,
+                  ),
+                  onPressed: () {},
+                  child: Text('TextButton'),
+                )
               ]),
             )));
   }

@@ -2,6 +2,11 @@
 
 import 'package:flutter/material.dart';
 import './widgets/rowcolumn.dart';
+import './widgets/buttonwidget.dart';
+import './widgets/textwidget.dart';
+import './widgets/cardwidget.dart';
+import './widgets/stateful.dart';
+
 void main(){
   runApp(MyApp());
 }
