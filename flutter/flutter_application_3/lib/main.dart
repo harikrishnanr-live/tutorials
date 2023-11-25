@@ -6,6 +6,7 @@ import './widgets/buttonwidget.dart';
 import './widgets/textwidget.dart';
 import './widgets/cardwidget.dart';
 import './widgets/stateful.dart';
+import './widgets/dynamic_checkboxwidget.dart';
 
 void main(){
   runApp(MyApp());
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context){
     return MaterialApp(
       title: "Demo-App",
-      home: MyWidget(),
+      home: DynamicCheckbox(),
     );
   }
 }
