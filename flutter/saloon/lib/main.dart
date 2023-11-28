@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import './screens/login.dart';
+// import './screens/login.dart';
+import './screens/homepage.dart';
 
 void main() {
-  runApp(Saloon());
+  runApp(const Saloon());
 }
 
 class Saloon extends StatelessWidget {
@@ -12,7 +13,7 @@ class Saloon extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: "Saloon",
-      home: Login(),
+      home: HomePage(),
     );
   }
 }
