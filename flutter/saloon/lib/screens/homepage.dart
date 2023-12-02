@@ -10,6 +10,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
+  List<String> _selectedItems = [];
 
   @override
   void initState() {
@@ -23,6 +24,23 @@ class _HomePageState extends State<HomePage>
     super.dispose();
   }
 
+  void _showMutliSelect() async{
+    final List<String> items =[
+      'Flutter',
+      'Nodejs'
+    ];
+  }
+
+  // final List<String>? results = await showDialog(context: context, builder: (BuildContext context){
+  //   return const Text("Hi");
+  // });
+
+  // if(results != null){
+  //   setState(() {
+  //     _selectedItems = results;
+  //   });
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,6 +51,7 @@ class _HomePageState extends State<HomePage>
       body: const Column(
         children: <Widget>[
           Column(children: [
+            // ElevatedButton(onPressed: _showMutliSelect, child: child)
             // https://pub.dev/packages/multi_dropdown
           ],),
           Column(children: [
@@ -94,3 +113,7 @@ class _HomePageState extends State<HomePage>
     );
   }
 }
+
+// class MutliSelect extends StatelessWidget{
+//   const MutliSelect({Key? key}) : super(key: key);
+// }
