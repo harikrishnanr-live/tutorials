@@ -53,7 +53,7 @@ class _LoginState extends State<Login> {
               child: Column(
                 children: [
                   Column(children: <Widget>[
-                    Image.network('https://www.tutorialkart.com/img/lion.jpg')
+                    Image.asset('../assets/images/saloon.jpg')
                   ]),
                   const SizedBox(
                     height: 8.0,
