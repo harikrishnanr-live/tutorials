@@ -44,6 +44,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         title: const Text('dbestech'),
@@ -78,63 +79,51 @@ class _HomePageState extends State<HomePage> {
             const Divider(
               height: 30,
             ),
-            Column(children: [
-              for (var subject in subjects)
-                const Column(children: [Card(
-                elevation: 50,
-                shadowColor: Colors.black,
-                color: Colors.black,
-                child: SizedBox(
-                  height: 500,
-                  child: Padding(
-                    padding: EdgeInsets.all(20.0),
-                    child: Column(
-                      children: <Widget>[
-                        CircleAvatar(
-                          backgroundColor: Colors.blue,
-                          radius: 108,
-                          child: CircleAvatar(
-                            backgroundImage: NetworkImage(
-                                "https://media.geeksforgeeks.org/wp-content/uploads/20210101144014/gfglogo.png"), //NetworkImage
-                            radius: 100,
-                          ), //CircleAvatar
-                        ), //CircleAvatar
-                        SizedBox(
-                          height: 10,
-                        ), //SizedBox
-                        Text(
-                          'GeeksforGeeks',
-                          style: TextStyle(
-                            fontSize: 30,
-                            color: Colors.green,
-                            fontWeight: FontWeight.w500,
-                          ), //Textstyle
-                        ), //Text
-                        SizedBox(
-                          height: 10,
-                        ), //SizedBox
-                        Text(
-                          'GeeksforGeeks is a computer science portal for geeks at geeksforgeeks.org. It contains well written, well thought and well explained computer science and programming articles, quizzes, projects, interview experiences and much more!!',
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: Colors.green,
-                          ), //Textstyle
-                        ), //Text
-                        SizedBox(
-                          height: 10,
-                        ), //SizedBox
-                        SizedBox(
-                          width: 100,
-                        ) //SizedBox
-                      ],
-                    ), //Column
-                  ), //Padding
-                ), //SizedBox
-              )])
-            ]),
+            ListViewDetails()
           ],
         ),
       ),
+    );
+  }
+}
+
+// ignore: must_be_immutable
+class ListViewDetails extends StatelessWidget {
+  List users = [
+    {
+      'name':
+          'Consequat ac felis donec et. Et netus et malesuada fames ac. Sit amet aliquam id diam maecenas ultricies. Sem nulla pharetra diam sit amet nisl. Mauris vitae ultricies leo integer malesuada nunc vel risus. Nec ullamcorper sit amet risus nullam. Iaculis nunc sed augue lacus viverra vitae congue eu consequat. Ultricies leo integer malesuada nunc. Tempor nec feugiat nisl pretium fusce id. Id diam maecenas ultricies mi eget. Semper auctor neque vitae tempus quam. Sit amet justo donec enim diam vulputate. Adipiscing commodo elit at imperdiet dui accumsan sit. Ipsum a arcu cursus vitae congue mauris. Est pellentesque elit ullamcorper dignissim. Adipiscing tristique risus nec feugiat in. Scelerisque varius morbi enim nunc faucibus a pellentesque sit amet. Aenean pharetra magna ac placerat vestibulum lectus. Consequat interdum varius sit amet mattis vulputate enim.',
+      'age': '30'
+    },
+    {
+      'name':
+          'Dui faucibus in ornare quam. Ante in nibh mauris cursus mattis. Odio tempor orci dapibus ultrices in iaculis nunc sed. Id aliquet lectus proin nibh nisl condimentum id venenatis. Velit aliquet sagittis id consectetur. Fermentum dui faucibus in ornare quam viverra orci sagittis eu. Pretium lectus quam id leo in vitae turpis massa. Cursus in hac habitasse platea dictumst quisque sagittis purus. Et egestas quis ipsum suspendisse ultrices gravida dictum. Dolor magna eget est lorem. Id semper risus in hendrerit gravida rutrum quisque. Elementum sagittis vitae et leo duis ut diam quam nulla. Fermentum iaculis eu non diam phasellus vestibulum lorem. Arcu dui vivamus arcu felis bibendum.',
+      'age': '25'
+    },
+    {
+      'name':
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      'age': '25'
+    }
+  ];
+
+  ListViewDetails({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scrollbar(
+      child: SingleChildScrollView( child: GridView.builder(
+        shrinkWrap: true,
+        primary: true,
+        itemCount: 120,
+        gridDelegate:
+            const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+        itemBuilder: (BuildContext context, int index) {
+          return Center(
+            child: Text('item $index'),
+          );
+        },
+      )),
     );
   }
 }

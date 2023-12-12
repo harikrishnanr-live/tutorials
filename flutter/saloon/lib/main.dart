@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:saloon/screens/dashboard.dart';
 // import './screens/login.dart';
 import './screens/homepage/homepage.dart';
 
@@ -13,7 +14,7 @@ class Saloon extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: "Saloon",
-      home: HomePage(),
+      home: Dashboard(),
     );
   }
 }

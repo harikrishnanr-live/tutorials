@@ -1,0 +1,4 @@
+<form (ngSubmit)="onAddProduct(productForm.value)" [formGroup]="productForm">
+  <input type="text" [(ngModel)]="productPage.title" formControlName="title"/>
+  <button type="submit">Save</button>
+</form>
