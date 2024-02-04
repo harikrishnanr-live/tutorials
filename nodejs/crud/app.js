@@ -1,8 +1,8 @@
 const http = require("http");
 const getRequest = require("./methods/get-request");
-const postReq = require("./methods/post-request");
-const putReq = require("./methods/put-request");
-const delReq = require("./methods/delete-request");
+const postRequest = require("./methods/post-request");
+const putRequest = require("./methods/put-request");
+const deleteRequest = require("./methods/delete-request");
 const movies = require("./data/movies.json");
 require("dotenv").config();
 
