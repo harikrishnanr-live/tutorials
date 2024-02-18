@@ -3,8 +3,11 @@ const asyncHandler = require("express-async-handler");
 const Contact = require("../models/contactModel");
 
 const getContact = asyncHandler(async (request, response) => {
-  const contact = await Contact.findById(request.params.id);
-  if(!contact){
+  // const contact = await Contact.findById(request.params.id);
+  const contact = await Contact.find({
+    user_id: request.user.id
+  });
+  if (!contact) {
     response.status(404);
     throw new Error("Contact not found");
   }
@@ -20,7 +23,8 @@ const createContact = asyncHandler(async (request, response) => {
   const contact = await Contact.create({
     name,
     email,
-    phone
+    phone,
+    user_id: request.user.id
   });
   response.status(201).json({
     message: "Contacts Created",
@@ -30,7 +34,7 @@ const createContact = asyncHandler(async (request, response) => {
 
 const showContact = asyncHandler(async (request, response) => {
   const contact = await Contact.findById(request.params.id);
-  if(!contact){
+  if (!contact) {
     // response.status(404);
     throw new Error("Contact not found");
   }
@@ -39,7 +43,7 @@ const showContact = asyncHandler(async (request, response) => {
 
 const updateContact = asyncHandler(async (request, response) => {
   const contact = await Contact.findById(request.params.id);
-  if(!contact){
+  if (!contact) {
     response.status(404);
     throw new Error("Contact not found");
   }
@@ -58,11 +62,11 @@ const updateContact = asyncHandler(async (request, response) => {
 
 const deleteContact = asyncHandler(async (request, response) => {
   const contact = await Contact.findById(request.params.id);
-  if(!contact){
+  if (!contact) {
     response.status(404);
     throw new Error("Contact not found");
   }
-  await Contact.deleteOne({"_id": request.params.id});
+  await Contact.deleteOne({ "_id": request.params.id });
   response.status(200).json({
     message: "Contact Deleted",
     data: contact
